@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_exma_color">
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/exam_title_text"
+            style="@style/exam_list_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/is25dp"
+            android:text="一类环境中，钢筋混凝土梁的保护层厚度最小取保护层厚度最小取保护层厚度最小取。"
+            android:textColor="#272F55"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_requeset_list"
+            style="@style/exam_list_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exam_title_text"
+            android:layout_marginTop="32dp" />
+
+        <include
+            android:id="@+id/result_info_layout"
+            layout="@layout/answer_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/rv_requeset_list"
+            android:layout_marginBottom="27dp"
+            android:layout_marginTop="26dp" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

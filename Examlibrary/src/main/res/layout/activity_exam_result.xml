@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExamResultActivity">
+    <include
+        android:id="@+id/exam_result_head"
+        layout="@layout/public_exam_head"/>
+    <include
+        android:id="@+id/exam_result_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exam_result_head"
+        layout="@layout/exam_result_title_layout"/>
+    <com.wdcloud.examlibrary.wight.MyViewPager
+        android:id="@+id/exam_result_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_result_setting"
+        android:layout_below="@+id/exam_result_score"/>
+    <include
+        android:id="@+id/bottom_result_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/exam_bottom_setting"/>
+</RelativeLayout>

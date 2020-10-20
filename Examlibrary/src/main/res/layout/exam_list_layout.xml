@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFDFD"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="6dp"
+        style="@style/exam_card_style">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_exma_color">
+            <TextView
+                android:id="@+id/exam_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/exam_list_margin"
+                android:layout_marginTop="@dimen/is25dp"
+                android:text="..................................."
+                android:textColor="#272F55"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_requeset_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/exam_list_margin"
+                android:layout_marginTop="32dp"
+                android:layout_below="@+id/exam_title_text"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

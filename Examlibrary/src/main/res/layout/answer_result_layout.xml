@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:background="@drawable/bg_exam_result">
+    <TextView
+        android:id="@+id/result_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#202124"
+        android:textSize="15sp"
+        android:text="试题解析"/>
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#00B288"
+        android:textSize="16sp"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/result_title"
+        android:text="正确答案：A"/>
+    <TextView
+        android:id="@+id/result_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#202124"
+        android:textSize="14sp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/result_text"
+        android:text="钢筋混凝土梁的保护层厚度最小取保护层厚度最小取保护层厚度最小, 光圆钢筋实际上就是普通低碳钢的小圆钢和盘圆。变形钢筋是表面带肋的钢筋，通常带有2道纵肋和沿长度方向均匀分布的横肋。横肋的外形为螺旋形、人字形、月牙形3种。用公称直径的毫米数表示。"/>
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/exam_erro_num"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:text="1"
+        android:textColor="#ffff"
+        android:gravity="center"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:textSize="15sp"
+        android:background="@drawable/bg_erro_circle"/>
+</RelativeLayout>

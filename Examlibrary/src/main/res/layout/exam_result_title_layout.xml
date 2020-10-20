@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/bg_exma_color"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp">
+
+    <ImageView
+        android:id="@+id/exam_type_img"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:src="@mipmap/simple_exam" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/exam_result_current_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="1"
+            android:textColor="#202124"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/exam_result_sum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="/15"
+            android:textColor="#4F5052"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/simple_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="及格分：60分"
+        android:textColor="#737386"
+        android:layout_marginLeft="28dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/exam_type_img"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/sum_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="总分：100分"
+        android:textColor="#737386"
+        android:layout_marginLeft="17dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/simple_score_text"
+        android:textSize="12sp" />
+</RelativeLayout>

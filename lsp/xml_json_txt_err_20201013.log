@@ -1,0 +1,12 @@
+url.js:103
+    throw new TypeError('Parameter "url" must be a string, not ' + typeof url);
+    ^
+
+TypeError: Parameter "url" must be a string, not undefined
+    at Url.parse (url.js:103:11)
+    at Object.urlParse [as parse] (url.js:97:13)
+    at AnalysisLSPServer.handle_file_event (C:\Users\Umbrella\.AndroidStudio4.0\config\plugins\org.jboss.tools.intellij.analytics\lib\server\server.js:90:29)
+    at Timeout.setTimeout [as _onTimeout] (C:\Users\Umbrella\.AndroidStudio4.0\config\plugins\org.jboss.tools.intellij.analytics\lib\server\server.js:276:16)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)

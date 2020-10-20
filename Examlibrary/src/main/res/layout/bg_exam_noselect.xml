@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rv_parent_noselect"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/exam_item_padding"
+    android:background="@drawable/bg_exam_requeset_noselect">
+    <TextView
+        android:id="@+id/exam_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="#272F55"
+        android:textSize="16sp"
+        android:text="B. 16mm"/>
+</RelativeLayout>

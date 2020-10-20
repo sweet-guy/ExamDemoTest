@@ -1,0 +1,3 @@
+include ':Examlibrary'
+include ':app'
+rootProject.name = "ExamDemoTest"

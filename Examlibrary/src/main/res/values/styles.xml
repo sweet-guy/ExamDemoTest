@@ -1,0 +1,53 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="exam_card_style">
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="exam_list_margin">
+        <item name="android:layout_marginLeft">@dimen/is25dp</item>
+        <item name="android:layout_marginRight">@dimen/is25dp</item>
+    </style>
+    <!--选项间距-->
+    <style name="exam_item_padding">
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+<!--    <style name="exam_item_text_style">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:layout_width">64dp</item>-->
+<!--        <item name="android:layout_height">23dp</item>-->
+<!--    </style>-->
+
+    <!--弹框动画-->
+    <style name="BottomDialog.Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/tranlate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/tranlate_dialog_out</item>
+    </style>
+    <declare-styleable name="ExamResultView">
+        <attr name="text_size" format="dimension" />
+        <attr name="text_color" format="color" />
+        <attr name="progressBackground" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="progressWidth" format="integer"/>
+        <attr name="progressAlpa" format="float"/>
+        <attr name="outsideRadio" format="dimension"/>
+        <attr name="outsideSize" format="integer"/>
+        <attr name="startAngle" format="float"/>
+        <attr name="endAngle" format="float"/>
+        <attr name="headText" format="string"/>
+        <attr name="footText" format="string"/>
+        <attr name="progress" format="float"/>
+        <attr name="maxProgress" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wdcloud.examlibrary">
+
+    <application>
+        <activity android:name=".ScoreResultActivity"></activity>
+        <activity android:name=".ToMainActivity" />
+        <activity android:name=".ExamResultActivity" />
+        <activity android:name=".ExamActivity" />
+    </application>
+
+</manifest>

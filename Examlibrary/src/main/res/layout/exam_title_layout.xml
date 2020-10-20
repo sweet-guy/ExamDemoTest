@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:background="@color/bg_exma_color">
+    <ImageView
+        android:id="@+id/exam_type_img"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:src="@mipmap/simple_exam"/>
+    <TextView
+        android:id="@+id/exam_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="倒计时：118s"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#1B7EF3"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_weight="1"
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/exam_current_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textStyle="bold"
+            android:layout_gravity="bottom"
+            android:textColor="#F04142"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/exam_sum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="#F04142"
+            android:text="/15"
+            android:textSize="15sp" />
+    </LinearLayout>
+</RelativeLayout>
