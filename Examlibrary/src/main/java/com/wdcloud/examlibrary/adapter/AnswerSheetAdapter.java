@@ -1,11 +1,9 @@
 package com.wdcloud.examlibrary.adapter;
 
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.wdcloud.examlibrary.R;
-import com.wdcloud.examlibrary.entity.AnswerBean;
 import com.wdcloud.examlibrary.entity.ExamRequsetBean;
 
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +37,6 @@ public class AnswerSheetAdapter extends BaseMultiItemQuickAdapter<ExamRequsetBea
         {
             case TYPE_LEVEL_0:
                 baseViewHolder.setText(R.id.exam_text_num,answerBean.getExamNum());
-//                baseViewHolder.addNo
                 break;
             case TYPE_LEVEL_1:
                 baseViewHolder.setText(R.id.exam_text_num,answerBean.getExamNum());

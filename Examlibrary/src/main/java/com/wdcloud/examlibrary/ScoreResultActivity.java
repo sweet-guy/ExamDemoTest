@@ -3,6 +3,7 @@ package com.wdcloud.examlibrary;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -22,7 +23,8 @@ public class ScoreResultActivity extends FragmentActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_score_result);
         ExamResultView examResultView = findViewById(R.id.examResultView);
-        examResultView.setProgress(67);
+        examResultView.setProgress(75);
+//        examResultView.setProgressColor(Color.parseColor("#E85A3A"));
         TextView cardText = findViewById(R.id.exam_card_text);
         cardText.setVisibility(View.GONE);
         ImageView backImg = findViewById(R.id.exam_back_img);

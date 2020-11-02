@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:textColor="#272F55"
+            android:textColor="@color/exam_title_color"
             android:visibility="gone"
             android:text="答题卡"/>
         <View

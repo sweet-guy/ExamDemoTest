@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,15 @@ public class LookExamFragment extends Fragment {
         RecyclerView examList = rootView.findViewById(R.id.rv_requeset_list);
         TextView titleText = rootView.findViewById(R.id.exam_title_text);
         titleText.setText(examRequsetBean.getExamTitle());
+        LinearLayout result = rootView.findViewById(R.id.result_info_layout);
+        if(index%2==0)
+        {
+            result.setVisibility(View.GONE);
+        }
+        else
+        {
+            result.setVisibility(View.VISIBLE);
+        }
         List<ExamRequsetBean.RequsetBean> requsetBeanList =examRequsetBean.getRequsetBeanList();
         initExamList(examList,requsetBeanList);
         return rootView;
@@ -57,7 +67,6 @@ public class LookExamFragment extends Fragment {
             public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
                 ExamRequsetBean.RequsetBean requsetBean = requsetBeanList.get(position);
                 String isDouble = examRequsetBean.getIsDouble();
-                Toast.makeText(getContext(),"点击",Toast.LENGTH_SHORT).show();
             }
         });
     }

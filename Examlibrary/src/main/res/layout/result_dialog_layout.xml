@@ -12,7 +12,7 @@
         android:text="答题卡"
         android:textColor="#202124"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
     <RelativeLayout
         android:id="@+id/lv_exam_type"
         android:layout_width="wrap_content"
@@ -83,6 +83,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_exam_list"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_below="@+id/under_line"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/under_line"
+        android:layout_marginBottom="21dp"
+        android:overScrollMode="never"/>
 </RelativeLayout>

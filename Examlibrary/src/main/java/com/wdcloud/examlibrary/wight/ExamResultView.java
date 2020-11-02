@@ -41,7 +41,10 @@ public class ExamResultView extends View {
     private long mDuration=1000;
     private String headText;
     private String firstText="合格";
-    private String secondText="67分";
+    private String secondText="分";
+    private int firstTextColor;
+    private int secondTextColor;
+
     public ExamResultView(Context context) {
         super(context);
     }
@@ -87,6 +90,7 @@ public class ExamResultView extends View {
         drawFirstText(canvas,centerX);
         drawSecondText(canvas,centerX);
     }
+    //绘制进度
     protected void drawDial(Canvas canvas){
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(progressColor);
@@ -95,6 +99,7 @@ public class ExamResultView extends View {
         canvas.drawArc(mRectF, mStartAngle, mCurrentAngleSize, false, mPaint);
         mPaint.setShader(null);
     }
+    //绘制外部圆环
     protected void drawOutSideCircle(Canvas canvas,int centerX)
     {
         mPaint.setStyle(Paint.Style.STROKE);
@@ -103,16 +108,12 @@ public class ExamResultView extends View {
         mPaint.setStrokeWidth(5);
         mPaint.setColor(getColorWithAlpha(0.3f,progressColor));
         RectF rectF = new RectF(2, 2, centerX*2 -2, centerX*2 - 2);
-        canvas.drawArc(rectF, mStartAngle,270, false, mPaint);
+        canvas.drawArc(rectF, mStartAngle,mSweepAngle, false, mPaint);
     }
     //圆环内顶部文字
     public void setFirstText(String firstText)
     {
         this.firstText=firstText;
-    }
-    //圆环内底部文字
-    public void setSencondText(String sencondText){
-        this.secondText=sencondText;
     }
     /**
      * 设置当前进度
@@ -129,8 +130,10 @@ public class ExamResultView extends View {
         mCurrentAngleSize = progress;
         float size = mCurrentAngleSize / maxProgress;
         mCurrentAngleSize = (int) (mSweepAngle * size);
+        secondText=(int)progress+""+"分";
         setAnimator(0, mCurrentAngleSize);
     }
+    //绘制进度背景
     protected void drawBackground(Canvas canvas) {
         //画笔的填充样式，Paint.Style.FILL 填充内部;Paint.Style.FILL_AND_STROKE 填充内部和描边;Paint.Style.STROKE 描边
         mPaint.setStyle(Paint.Style.STROKE);
@@ -140,27 +143,31 @@ public class ExamResultView extends View {
         mPaint.setAntiAlias(true);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         //画笔的颜色
-        mPaint.setColor(progressBackground);
+        mPaint.setColor(getColorWithAlpha(0.1f,progressColor));
         //画笔的样式 Paint.Cap.Round 圆形,Cap.SQUARE 方形
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         //开始画圆弧
         Log.e("圆弧数据",mRectF.toString());
-        canvas.drawArc(mRectF, mStartAngle, 270, false, mPaint);
+        canvas.drawArc(mRectF, mStartAngle, mSweepAngle, false, mPaint);
     }
+    //绘制合格文字
     private void drawFirstText(Canvas canvas, float centerX) {
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(Color.parseColor("#5F6368"));
+        firstTextColor = Color.parseColor("#5F6368");
+        paint.setColor(firstTextColor);
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize(dp2px(context,15));
         Rect firstTextBounds = new Rect();
         paint.getTextBounds(firstText, 0, firstText.length(), firstTextBounds);
         canvas.drawText(firstText, centerX, firstTextBounds.height() / 2 + getHeight() * 2 / 5, paint);
     }
+    //绘制分数文字
     private void drawSecondText(Canvas canvas, float centerX) {
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(Color.parseColor("#E85A3A"));
+//        secondTextColor = Color.parseColor("#E85A3A");
+        paint.setColor(progressColor);
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTypeface(Typeface.DEFAULT_BOLD);
         paint.setTextSize(dp2px(context,25));
@@ -169,6 +176,7 @@ public class ExamResultView extends View {
         canvas.drawText(secondText, centerX, getHeight() / 2 + bounds.height() / 2 +
                 getFontHeight(secondText, 3)+30, paint);
     }
+    //获取文字高度
     private float getFontHeight(String textStr, float fontSize) {
         Paint paint = new Paint();
         paint.setTextSize(fontSize);
@@ -217,5 +225,18 @@ public class ExamResultView extends View {
     public void setAnimTime(long milli)
     {
         this.mDuration=milli;
+    }
+    //设置进度颜色
+    public void setProgressColor(int color)
+    {
+        this.progressColor=color;
+        invalidate();
+    }
+    //设置顶部文字颜色
+    public void setTitleTextStyle(int titleColor,int scoreColor)
+    {
+        this.firstTextColor=titleColor;
+        this.secondTextColor=scoreColor;
+        invalidate();
     }
 }

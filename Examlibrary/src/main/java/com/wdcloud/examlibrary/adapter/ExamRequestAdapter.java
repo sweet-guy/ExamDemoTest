@@ -42,6 +42,14 @@ public class ExamRequestAdapter extends BaseMultiItemQuickAdapter<ExamRequsetBea
 //                View view = baseViewHolder.getView(R.id.rv_parent_exam_erro);
                 break;
             case EXAM_TYPE_2:
+                if(isExam)
+                {
+                    baseViewHolder.setVisible(R.id.select_sure_img,false);
+                }
+                else
+                {
+                    baseViewHolder.setVisible(R.id.select_sure_img,true);
+                }
                 baseViewHolder.setText(R.id.exam_select_title,examRequsetBean.getRequestTitle());
                 break;
             case EXAM_TYPE_3:

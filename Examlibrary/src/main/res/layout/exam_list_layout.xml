@@ -20,7 +20,7 @@
                 style="@style/exam_list_margin"
                 android:layout_marginTop="@dimen/is25dp"
                 android:text="..................................."
-                android:textColor="#272F55"
+                android:textColor="#202124"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
             <androidx.recyclerview.widget.RecyclerView
@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 style="@style/exam_list_margin"
                 android:layout_marginTop="32dp"
+                android:overScrollMode="never"
                 android:layout_below="@+id/exam_title_text"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/is25dp"
             android:text="一类环境中，钢筋混凝土梁的保护层厚度最小取保护层厚度最小取保护层厚度最小取。"
-            android:textColor="#272F55"
+            android:textColor="#202124"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -26,18 +26,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/exam_title_text"
+            android:overScrollMode="never"
             android:layout_marginTop="32dp" />
+         <LinearLayout
+             android:id="@+id/result_info_layout"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="16dp"
+             android:layout_marginRight="16dp"
+             android:layout_below="@+id/rv_requeset_list"
+             android:layout_marginBottom="27dp"
+             android:orientation="vertical"
+             android:layout_marginTop="26dp">
+             <include
 
-        <include
-            android:id="@+id/result_info_layout"
-            layout="@layout/answer_result_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_below="@+id/rv_requeset_list"
-            android:layout_marginBottom="27dp"
-            android:layout_marginTop="26dp" />
+                 layout="@layout/answer_result_layout"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                />
+         </LinearLayout>
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

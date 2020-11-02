@@ -19,6 +19,6 @@
 -->
 <resources>
     <!-- Activity background color -->
-    <color name="exam_title_color">#272F55</color>
+    <color name="exam_title_color">#202124</color>
     <color name="bg_exma_color">#ffff</color>
 </resources>

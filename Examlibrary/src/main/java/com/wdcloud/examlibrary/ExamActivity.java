@@ -1,22 +1,20 @@
 package com.wdcloud.examlibrary;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,13 +25,13 @@ import com.wdcloud.examlibrary.adapter.AnswerSheetAdapter;
 import com.wdcloud.examlibrary.adapter.ExamPagerAdapter;
 import com.wdcloud.examlibrary.entity.AnswerBean;
 import com.wdcloud.examlibrary.entity.ExamRequsetBean;
+import com.wdcloud.examlibrary.util.StyleUtil;
 import com.wdcloud.examlibrary.wight.MyViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -59,6 +57,7 @@ public class ExamActivity extends FragmentActivity implements View.OnClickListen
     private ImageView backImg;
     private LocalBroadcastManager lbm;
     private AnswerSheetAdapter answerSheetAdapter;
+    private ImageView examTypeImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +75,7 @@ public class ExamActivity extends FragmentActivity implements View.OnClickListen
         btExamNext = findViewById(R.id.bottom_exam_next);
         examTitle = findViewById(R.id.exam_title_text);
         backImg = findViewById(R.id.exam_back_img);
+        examTypeImg = findViewById(R.id.exam_type_img);
         examCardText.setOnClickListener(this);
         btExamCard.setOnClickListener(this);
         btExamLast.setOnClickListener(this);
@@ -87,7 +87,7 @@ public class ExamActivity extends FragmentActivity implements View.OnClickListen
         examPager = findViewById(R.id.exam_viewPager);
         examPager.setCurrentItem(0);
         examCurrentNum.setText("1");
-        examSumText.setText("/20");
+        examSumText.setText("/" + examRequsetBeans.size());
         ExamPagerAdapter examPagerAdapter = new ExamPagerAdapter(true,examRequsetBeans, getSupportFragmentManager());
         examPager.setAdapter(examPagerAdapter);
         examPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -112,15 +112,27 @@ public class ExamActivity extends FragmentActivity implements View.OnClickListen
         filter.addAction("com.wdexam.jumptonext");
         filter.addAction("com.wdexam.jumptoposition");
         lbm.registerReceiver(mMessageReceiver, filter);
+        setStyle();
     }
-    private void startTime()
-    {
+
+    private void setStyle() {
+        //顶部返回按钮backImg   顶部文字examTitle   单选题图片examTypeImg  时间文字textView
+        //题目总数 examSumText   答题卡按钮 btExamCard  上一题btExamLast   下一题 btExamNext
+//        examTypeImg.setImageResource(R.mipmap.ic_launcher);
+        StyleUtil styleUtil = StyleUtil.getInstance();
+//        styleUtil.setShapeStyle(btExamCard,3,"#E74C3C");
+//        styleUtil.setShapeBackground(btExamCard,"#A2D9CE");
+        styleUtil.setTextStyle(examTitle,"#E74C3C",20, Typeface.NORMAL);
+    }
+
+    private void startTime() {
         handler.sendEmptyMessageDelayed(1, 1000);
     }
-    private void endTime()
-    {
+
+    private void endTime() {
         handler.removeCallbacksAndMessages(null);
     }
+
     //计时器任务
     int time = 100;
     Handler handler = new Handler(){
@@ -137,7 +149,6 @@ public class ExamActivity extends FragmentActivity implements View.OnClickListen
                 default:
                     break;
             }
-
         };
     };
 

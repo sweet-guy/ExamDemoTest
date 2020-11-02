@@ -77,7 +77,6 @@ public class ExamFragment extends Fragment {
                             examRequsetBean.setHasSelect(true);
                         }
                     }
-//                    Toast.makeText(getContext(),"多选",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
